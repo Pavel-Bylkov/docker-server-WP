@@ -8,10 +8,11 @@
 
 ```shell
 # build image:
-docker build -t server:final .
+docker build -t name .
 
 # launch container:
-docker run --name server -p 80:80 -p 443:443 -it -d server:final
+docker run -it --name server -p 80:80 -p 443:443  -d name
+docker run -it --name server -p 80:80 -p 443:443 name
 
 # run a command in running container (eg. to go "in" launched contaner):
 docker exec -it server bash
@@ -26,7 +27,7 @@ docker start server
 docker rm server
 
 # remove image
-docker rmi server:final
+docker rmi server
 
 # stop all containers
 docker stop $(docker ps -qa)
